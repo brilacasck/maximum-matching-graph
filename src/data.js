@@ -1,4 +1,4 @@
-const data = {
+const graphData = {
     "a": [1],
     "b": [1, 2],
     "c": [1, 2],
@@ -9,4 +9,4 @@ const data = {
     "h": [8]
 }
 
-export default data;
+export default graphData;
