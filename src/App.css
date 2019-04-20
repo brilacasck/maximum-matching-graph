@@ -24,7 +24,7 @@ body {
     font-family: cursive;
     border: 2px solid #fff;
     cursor: pointer;
-    z-index: 10001;
+    z-index: 100001;
 }
 #help-dialog{
     width: 100%;
@@ -38,7 +38,7 @@ body {
     top: 0;
     left: 0;
     background: rgba(0, 0, 0, 0.9);
-    z-index: 10000;
+    z-index: 100000;
     color: #ededed;
     line-height: 2.8rem;
     font-family: 'Courier New', Courier, monospace;
