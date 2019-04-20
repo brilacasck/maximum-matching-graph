@@ -16,22 +16,29 @@ def dfs(graph, v, index, layers, dfs_parent, dfs_paths, matching, nodes):
             if ((neighbour in nodes[0] and (v not in matching or neighbour != matching[v])) or
                     (neighbour in nodes[1] and (v in matching and neighbour == matching[v]))):
                 dfs_parent[neighbour] = v
+                # print(dfs_parent)
                 if dfs(graph, neighbour, index-1, layers, dfs_parent, dfs_paths, matching, nodes):
                     return True
     return False
 
 def bfs(graph, matching, nodes):
+    # print(matching)
     layers = []
     layer = set()
     for vertex in nodes[0]:
         if vertex not in matching:
             layer.add(vertex)
     layers.append(layer)
+    
+
     visited = set()
+    print()
     while True:
         layer = layers[-1]
         new_layer = set()
+        print("@")
         for vertex in layer:
+            print (vertex)
             if vertex in nodes[0]:
                 visited.add(vertex)
                 for neighbour in graph[vertex]:
@@ -44,9 +51,16 @@ def bfs(graph, matching, nodes):
                     if (neighbour not in visited and
                         (vertex in matching and neighbour == matching[vertex])):
                         new_layer.add(neighbour)
+        
         layers.append(new_layer)
+
         if len(new_layer) == 0:
             return layers
+        # print("**", new_layer)
+        for vertex in new_layer:
+            if vertex in nodes[1] and vertex not in matching:
+                pass
+                print(">> ", vertex)
         if any(vertex in nodes[1] and vertex not in matching for vertex in new_layer):
             return layers
 
@@ -62,9 +76,14 @@ def maximum_matching(graph, nodes):
         free_vertex = set([vertex for vertex in layers[-1] if vertex not in matching])
         del dfs_paths[:]
         dfs_parent.clear()
+
+        print("#", free_vertex)
+
         for vertex in free_vertex:
             dfs_parent[vertex] = vertex
             dfs(graph, vertex, len(layers)-1, layers, dfs_parent, dfs_paths, matching, nodes)
+
+        # print(dfs_paths)
         if len(dfs_paths) == 0:
             break
         for path in dfs_paths:
@@ -101,4 +120,4 @@ data = {
     "h": [8]
 }
 
-print(run_mm(data))
+(run_mm(data))

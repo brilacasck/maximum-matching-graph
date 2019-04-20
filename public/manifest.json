@@ -1,6 +1,6 @@
 {
-  "short_name": "React App",
-  "name": "Create React App Sample",
+  "short_name": "Max Matching G",
+  "name": "Maximum Matching Bipartite Graph (Hopcroft-Karp)",
   "icons": [
     {
       "src": "favicon.ico",
