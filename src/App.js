@@ -1,3 +1,8 @@
+/**
+ * @author Alireza Kavian
+ * @see https://blilac.ir
+ */
+
 import React, { Component } from 'react';
 import './App.css';
 import graphData from './data';
@@ -215,7 +220,7 @@ class App extends Component {
                         </div>
                     )
                 }
-                <div id="forkme" title="This Is `Private` Till Being Represented To Dr. Farnaz Sheikhi @ K.N.T.U"><img alt="fork-me-on-github" src={forkme} /></div>
+                <div id="forkme" title="Source Code"><a href="https://github.com/brilacasck/maximum-matching-graph"><img alt="fork-me-on-github" src={forkme} /></a></div>
                 <div id="help" className="noselect" onClick={() => this.setState(state => ({isHelp: !state.isHelp}))}>?</div>
                 <div id="clear" className="noselect" onClick={this.clear}>CLR</div>
                 <div id="run" className="noselect" onClick={this.run}>RUN</div>
