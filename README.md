@@ -1,6 +1,6 @@
 # maximum-matching-graph
 
-\>\> See the [demo](https://alirezakay.github.io/showcase/y4/maximum-matching-bp-graph)
+\>\> See the [demo](https://alirezakay.github.io/showcase/y4/maximum-matching-b-graph)
 
 Find maximum matchings in an arbitrary **bipartite graphs** with `Node.js` and `React.js`
 
